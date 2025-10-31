@@ -8,6 +8,8 @@ import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.networktables.NT4Publisher;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 /**
@@ -18,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 public class Robot extends LoggedRobot {
 
   private final RobotContainer m_robotContainer;
-
+  
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -26,7 +28,6 @@ public class Robot extends LoggedRobot {
   public Robot() {
     Logger.addDataReceiver(new NT4Publisher());
     Logger.start();
-
     m_robotContainer = new RobotContainer();
   }
 
