@@ -4,6 +4,7 @@ import org.littletonrobotics.junction.Logger;
 
 import com.ctre.phoenix6.hardware.TalonFX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MotorTester extends SubsystemBase{
@@ -19,5 +20,7 @@ public class MotorTester extends SubsystemBase{
         Logger.recordOutput("Motor/angle",motor.getPosition().getValueAsDouble());
         Logger.recordOutput("Motor/voltage",motor.getMotorVoltage().getValueAsDouble());
         Logger.recordOutput("Motor/current",motor.getSupplyCurrent().getValueAsDouble());
+        
+        motor.setVoltage(SmartDashboard.getNumber("voltage", 1));
     }
 }
